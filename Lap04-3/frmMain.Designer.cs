@@ -33,6 +33,7 @@
             this.mniDepartments = new System.Windows.Forms.ToolStripMenuItem();
             this.chứcNăngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mniSearch = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.txtStudentID = new System.Windows.Forms.TextBox();
             this.lblStudentID = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -51,7 +52,6 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsbDepartments = new System.Windows.Forms.ToolStripButton();
             this.tsbSearch = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.groupBox1.SuspendLayout();
             this.menuMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudent)).BeginInit();
@@ -61,14 +61,14 @@
             // mniExit
             // 
             this.mniExit.Name = "mniExit";
-            this.mniExit.Size = new System.Drawing.Size(270, 34);
+            this.mniExit.Size = new System.Drawing.Size(219, 34);
             this.mniExit.Text = "Thoát";
             // 
             // mniDepartments
             // 
             this.mniDepartments.Image = ((System.Drawing.Image)(resources.GetObject("mniDepartments.Image")));
             this.mniDepartments.Name = "mniDepartments";
-            this.mniDepartments.Size = new System.Drawing.Size(270, 34);
+            this.mniDepartments.Size = new System.Drawing.Size(219, 34);
             this.mniDepartments.Text = "Quản lý khoa";
             // 
             // chứcNăngToolStripMenuItem
@@ -79,15 +79,20 @@
             this.toolStripSeparator1,
             this.mniExit});
             this.chứcNăngToolStripMenuItem.Name = "chứcNăngToolStripMenuItem";
-            this.chứcNăngToolStripMenuItem.Size = new System.Drawing.Size(182, 29);
+            this.chứcNăngToolStripMenuItem.Size = new System.Drawing.Size(113, 29);
             this.chứcNăngToolStripMenuItem.Text = "Chức năng";
             // 
             // mniSearch
             // 
             this.mniSearch.Image = ((System.Drawing.Image)(resources.GetObject("mniSearch.Image")));
             this.mniSearch.Name = "mniSearch";
-            this.mniSearch.Size = new System.Drawing.Size(270, 34);
+            this.mniSearch.Size = new System.Drawing.Size(219, 34);
             this.mniSearch.Text = "Tìm kiếm";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(216, 6);
             // 
             // txtStudentID
             // 
@@ -267,11 +272,6 @@
             this.tsbSearch.Size = new System.Drawing.Size(113, 29);
             this.tsbSearch.Text = "Tìm Kiếm";
             // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(267, 6);
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -287,6 +287,7 @@
             this.Controls.Add(this.dgvStudent);
             this.Name = "frmMain";
             this.Text = "Quản Lý Sinh Viên";
+            this.Load += new System.EventHandler(this.frmMain_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.menuMain.ResumeLayout(false);

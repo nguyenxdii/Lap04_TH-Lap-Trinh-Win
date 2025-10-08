@@ -45,7 +45,7 @@
 ---
 
 ## 🧩 BÀI 4.2 – Quản lý Khoa (Faculty)
-[ảnh]
+<img width="859" height="402" alt="2" src="https://github.com/user-attachments/assets/a83b3c93-82dd-4c72-bcd6-20e2c651145c" />
 
 ### 🧠 Yêu cầu:
 - Thêm cột **TotalProfessor** (`int`, cho phép NULL) vào bảng **Faculty**.
@@ -60,7 +60,8 @@
 ---
 
 ## 🧩 BÀI 4.3 – ToolStrip và Form Tìm kiếm
-[ảnh]
+<img width="858" height="381" alt="3" src="https://github.com/user-attachments/assets/ac5698ab-7980-4a19-914d-b52ef309aa10" />
+
 
 ### 🧠 Yêu cầu:
 - Sử dụng **ToolStrip** với 2 nút:
@@ -72,7 +73,7 @@
 - Khi click **Tìm kiếm** → mở form `frmSearch`.
 
 ### 📋 Chức năng form `frmSearch`:
-[ảnh]
+<img width="516" height="412" alt="4" src="https://github.com/user-attachments/assets/90a217e7-b5ea-4e31-8e30-d85935cc1321" />
 
 - Tìm kiếm sinh viên theo điều kiện:
   - Mã SV, Họ tên, Khoa.
@@ -83,7 +84,7 @@
 ---
 
 ## 🧩 BÀI 4.4 – Thông tin Đơn hàng (Invoice)
-[ảnh]
+<img width="669" height="412" alt="5" src="https://github.com/user-attachments/assets/e373aacb-668c-47eb-b2af-4fe49796ceeb" />
 
 ### 🧠 Yêu cầu xử lý:
 - Khi **Form_Load**:

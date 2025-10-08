@@ -1,4 +1,4 @@
-﻿using Lap04_1.Model;
+﻿using Lap04_2.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Entity;
 
-namespace Lap04_1
+namespace Lap04_2
 {
     public partial class frmMain : Form
     {
@@ -36,6 +36,11 @@ namespace Lap04_1
             {
                 MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            //keyshort
+            mniDepartments.ShortcutKeys = Keys.F2;
+            mniExit.ShortcutKeys = Keys.Alt | Keys.F4;
+            mniSearch.ShortcutKeys = Keys.Control | Keys.F;
         }
 
         // Hàm binding combobox: tên hiển thị là tên khoa, giá trị là mã khoa
@@ -54,10 +59,17 @@ namespace Lap04_1
                 {
                     s.StudentID,
                     s.FullName,
+                    FacultyID = s.FacultyID,
                     Faculty = s.Faculty.FacultyName,
                     s.AverageScore
                 })
                 .ToList();
+
+            dgvStudent.Columns[0].HeaderText = "MSSV";
+            dgvStudent.Columns[1].HeaderText = "Họ và tên";
+            dgvStudent.Columns[2].Visible = false;
+            dgvStudent.Columns[3].HeaderText = "Khoa";
+            dgvStudent.Columns[4].HeaderText = "Điểm TB";
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -115,6 +127,8 @@ namespace Lap04_1
                 db.Students.Add(newStudent);
                 db.SaveChanges();
 
+                RefreshGridFromDb();
+
                 // nap dl vao lai gridview
                 BindGrid(db.Students.Include(s => s.Faculty).ToList());
 
@@ -149,6 +163,7 @@ namespace Lap04_1
                     student.AverageScore = double.Parse(txtAverageScore.Text);
 
                     db.SaveChanges();
+                    RefreshGridFromDb();
 
                     //BindGrid(db.Students.ToList());
                     BindGrid(db.Students.Include(s => s.Faculty).ToList());
@@ -187,6 +202,7 @@ namespace Lap04_1
                     {
                         db.Students.Remove(student);
                         db.SaveChanges();
+                        RefreshGridFromDb();
 
                         //BindGrid(db.Students.ToList());
                         BindGrid(db.Students.Include(s => s.Faculty).ToList());
@@ -211,13 +227,58 @@ namespace Lap04_1
         {
             if (e.RowIndex >= 0)
             {
+                var r = dgvStudent.Rows[e.RowIndex];
                 DataGridViewRow selectedRow = dgvStudent.Rows[e.RowIndex];
                 txtStudentID.Text = selectedRow.Cells[0].Value.ToString();
                 txtFullName.Text = selectedRow.Cells[1].Value.ToString();
-                cmbFaculty.Text = selectedRow.Cells[2].Value.ToString();
-                txtAverageScore.Text = selectedRow.Cells[3].Value.ToString();
+                // set SelectedValue theo FacultyID ẩn
+                //cmbFaculty.Text = selectedRow.Cells[2].Value.ToString();
+                cmbFaculty.SelectedValue = r.Cells[2].Value;
+                txtAverageScore.Text = selectedRow.Cells[4].Value.ToString();
             }
         }
 
+        private void mni_Departments_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            using (frmFaculty f = new frmFaculty())
+            {
+                f.ShowDialog();
+            }
+
+            this.Show();
+
+            ReLoadAll();
+        }
+
+        private void ReLoadAll()
+        {
+            using (var fresh = new StudentDBContext())
+            {
+                var faculties = fresh.Faculties.ToList();
+                var students = fresh.Students.Include(s => s.Faculty).ToList();
+
+                FillFalcultyCombobox(faculties);
+                BindGrid(students);
+            }
+        }
+
+        private void RefreshGridFromDb()
+        {
+            using (var ctx = new StudentDBContext())
+            {
+                var students = ctx.Students
+                                  .Include(s => s.Faculty)
+                                  .AsNoTracking()        // không cache
+                                  .ToList();
+                BindGrid(students);
+            }
+        }
+
+        private void mniExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

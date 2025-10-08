@@ -1,7 +1,7 @@
 # 💻 BÀI TẬP LAB 04 – QUẢN LÝ SINH VIÊN (WinForms + Entity Framework)
 
 ## 📘 Môn: Lập Trình Windows
-**Sinh viên thực hiện:** Nguyễn Đặng Đăng Duy  
+**Sinh viên thực hiện:** Dii Nguyễn
 **Công nghệ:** C# WinForms – Entity Framework – SQL Server  
 **IDE:** Visual Studio 2022  
 **CSDL:** QuanLySinhVien (Code First From Database)

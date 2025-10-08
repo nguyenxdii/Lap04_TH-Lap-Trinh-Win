@@ -281,5 +281,17 @@ namespace Lap04_3
         {
             this.Close();
         }
+
+        private void mniSearch_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            using (frmSearch f = new frmSearch())
+            {
+                f.ShowDialog();
+            }
+
+            this.Show();
+        }
     }
 }

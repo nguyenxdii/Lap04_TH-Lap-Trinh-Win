@@ -121,6 +121,7 @@
             this.dgvFaculty.RowTemplate.Height = 28;
             this.dgvFaculty.Size = new System.Drawing.Size(541, 212);
             this.dgvFaculty.TabIndex = 5;
+            this.dgvFaculty.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFaculty_CellClick);
             // 
             // btnAdd
             // 
@@ -130,6 +131,7 @@
             this.btnAdd.TabIndex = 7;
             this.btnAdd.Text = "Thêm / Sửa";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnClose
             // 
@@ -139,6 +141,7 @@
             this.btnClose.TabIndex = 9;
             this.btnClose.Text = "Đóng";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnDelete
             // 
@@ -148,6 +151,7 @@
             this.btnDelete.TabIndex = 8;
             this.btnDelete.Text = "Xóa";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // frmFaculty
             // 

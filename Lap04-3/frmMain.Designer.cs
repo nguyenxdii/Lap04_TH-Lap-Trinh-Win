@@ -49,13 +49,13 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.menuMain = new System.Windows.Forms.MenuStrip();
             this.dgvStudent = new System.Windows.Forms.DataGridView();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolMain = new System.Windows.Forms.ToolStrip();
             this.tsbDepartments = new System.Windows.Forms.ToolStripButton();
             this.tsbSearch = new System.Windows.Forms.ToolStripButton();
             this.groupBox1.SuspendLayout();
             this.menuMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudent)).BeginInit();
-            this.toolStrip1.SuspendLayout();
+            this.toolMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // mniExit
@@ -63,6 +63,7 @@
             this.mniExit.Name = "mniExit";
             this.mniExit.Size = new System.Drawing.Size(219, 34);
             this.mniExit.Text = "Thoát";
+            this.mniExit.Click += new System.EventHandler(this.mniExit_Click);
             // 
             // mniDepartments
             // 
@@ -70,6 +71,7 @@
             this.mniDepartments.Name = "mniDepartments";
             this.mniDepartments.Size = new System.Drawing.Size(219, 34);
             this.mniDepartments.Text = "Quản lý khoa";
+            this.mniDepartments.Click += new System.EventHandler(this.mni_Departments_Click);
             // 
             // chứcNăngToolStripMenuItem
             // 
@@ -88,6 +90,7 @@
             this.mniSearch.Name = "mniSearch";
             this.mniSearch.Size = new System.Drawing.Size(219, 34);
             this.mniSearch.Text = "Tìm kiếm";
+            this.mniSearch.Click += new System.EventHandler(this.mniSearch_Click);
             // 
             // toolStripSeparator1
             // 
@@ -192,6 +195,7 @@
             this.btnAdd.TabIndex = 15;
             this.btnAdd.Text = "Thêm";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnDelete
             // 
@@ -201,6 +205,7 @@
             this.btnDelete.TabIndex = 17;
             this.btnDelete.Text = "Xóa";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
@@ -210,6 +215,7 @@
             this.btnUpdate.TabIndex = 16;
             this.btnUpdate.Text = "Sửa";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // lblTitle
             // 
@@ -243,18 +249,19 @@
             this.dgvStudent.RowTemplate.Height = 28;
             this.dgvStudent.Size = new System.Drawing.Size(680, 212);
             this.dgvStudent.TabIndex = 18;
+            this.dgvStudent.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStudent_CellContentClick);
             // 
-            // toolStrip1
+            // toolMain
             // 
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolMain.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.toolMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsbDepartments,
             this.tsbSearch});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 33);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1105, 34);
-            this.toolStrip1.TabIndex = 20;
-            this.toolStrip1.Text = "toolStrip1";
+            this.toolMain.Location = new System.Drawing.Point(0, 33);
+            this.toolMain.Name = "toolMain";
+            this.toolMain.Size = new System.Drawing.Size(1105, 34);
+            this.toolMain.TabIndex = 20;
+            this.toolMain.Text = "toolStrip1";
             // 
             // tsbDepartments
             // 
@@ -263,6 +270,7 @@
             this.tsbDepartments.Name = "tsbDepartments";
             this.tsbDepartments.Size = new System.Drawing.Size(149, 29);
             this.tsbDepartments.Text = "Quản Lý Khoa";
+            this.tsbDepartments.Click += new System.EventHandler(this.mni_Departments_Click);
             // 
             // tsbSearch
             // 
@@ -271,13 +279,14 @@
             this.tsbSearch.Name = "tsbSearch";
             this.tsbSearch.Size = new System.Drawing.Size(113, 29);
             this.tsbSearch.Text = "Tìm Kiếm";
+            this.tsbSearch.Click += new System.EventHandler(this.mniSearch_Click);
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1105, 424);
-            this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.toolMain);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnDelete);
@@ -293,8 +302,8 @@
             this.menuMain.ResumeLayout(false);
             this.menuMain.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudent)).EndInit();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
+            this.toolMain.ResumeLayout(false);
+            this.toolMain.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -321,7 +330,7 @@
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.MenuStrip menuMain;
         private System.Windows.Forms.DataGridView dgvStudent;
-        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStrip toolMain;
         private System.Windows.Forms.ToolStripButton tsbDepartments;
         private System.Windows.Forms.ToolStripButton tsbSearch;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;

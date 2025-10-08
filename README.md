@@ -11,11 +11,12 @@
 ## 🧩 BÀI 4.1 – Quản lý thông tin Sinh viên
 
 ### 📌 Giao diện chính:
-[ảnh]
+
 
 ### 🧠 Yêu cầu xử lý:
 
-#### 🔹 1.1. Sự kiện `Form_Load`:
+##<img width="841" height="397" alt="1" src="https://github.com/user-attachments/assets/f00b35d0-fdd0-4980-bb8d-31adf34b0d19" />
+## 🔹 1.1. Sự kiện `Form_Load`:
 - Hiển thị danh sách sinh viên hiện có trong CSDL (lấy từ bảng **Student**).
 - Combobox **Khoa** (Faculty) được lấy dữ liệu từ bảng **Faculty**, hiển thị tên khoa.
 

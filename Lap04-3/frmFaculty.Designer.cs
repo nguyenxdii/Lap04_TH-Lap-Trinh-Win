@@ -161,6 +161,7 @@
             this.Controls.Add(this.btnDelete);
             this.Name = "frmFaculty";
             this.Text = "frmFaculty";
+            this.Load += new System.EventHandler(this.frmFaculty_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFaculty)).EndInit();
